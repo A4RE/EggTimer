@@ -51,21 +51,27 @@ class ViewController: UIViewController {
                 return
             }
             if secondsPassed < totalTime {
+                
                 secondsPassed += 1
                 let percentageProgress = secondsPassed / totalTime
                 progressView.setProgress(percentageProgress, animated: true)
+                
             } else {
+                
                 timer.invalidate()
                 titleLabel.text = "Done!"
                 titleLabel.textColor = UIColor(named: "GreenColor")
                 playSound()
-                print("Timer is invalidated")
+                
             }
             if progressView.progress == 1 {
+                
                 progressView.progressTintColor = UIColor(named: "GreenColor")
+                
             }
         }
     }
+    
     // MARK: - STOP TIMER BUTTON
     @IBAction func stopTheTimer(_ sender: UIButton) {
         timer.invalidate()
@@ -74,6 +80,7 @@ class ViewController: UIViewController {
         titleLabel.text = "How do you like your eggs?"
         titleLabel.textColor = .darkGray
     }
+    
     // MARK: - PLAY SOUND FUNCTION
     func playSound() {
         guard let path = Bundle.main.path(forResource: "alarm_sound", ofType: "mp3") else {
