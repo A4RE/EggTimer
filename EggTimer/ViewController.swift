@@ -33,7 +33,7 @@ class ViewController: UIViewController {
         
         guard let title = sender.currentTitle else { return }
         print(title)
-//        secondsRemaining = eggsTimeDict[title]!
+        secondsRemaining = eggsTimeDict[title]!
         
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] timer in
             guard let self = self else {
